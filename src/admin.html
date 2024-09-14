@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/output.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+</head>
+
+<body class="bg-[#E6F3FF]">
+  <div class="container mx-auto flex gap-[57px] p-[20px] flex-col items-center">
+    <h1 class="text-center text-[48px]">Admin panel</h1>
+    <div
+      class="w-[600px] p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+      <div class="flex items-center justify-between mb-4">
+        <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">
+          Barcha adminlar
+        </h5>
+      </div>
+      <div id="users-wrapper">
+        <template id="users">
+          <div class="flex flex-col mb-6">
+            <div class="max-w-[600px] p-[10px] border-[1px] border-white rounded-[24px]">
+              <div class="flex justify-between">
+                <p class="user-name text-white font-bold">mor_2314</p>
+                <p class="text-white">
+                  password:
+                  <span class="user-password font-bold">83r5^_</span>
+                </p>
+              </div>
+              <div>
+                <p class="text-gray-500 text-[7px] cursor-pointer hover:text-white mt-[10px]">
+                  <span class="user-token">""eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...""</span>
+                </p>
+              </div>
+              <div>
+                <p class="user-email text-white font-sans">
+                  salom@sasa.com
+                </p>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/admin.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</body>
+
+</html>
