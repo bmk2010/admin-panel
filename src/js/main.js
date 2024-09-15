@@ -22,23 +22,28 @@ loginForm.addEventListener("submit", (e) => {
       })
         .then((res) => res.json())
         .then((data) => {
-          localStorage.setItem('Token', JSON.stringify(data.token));
+          if (data.token){
+            localStorage.setItem("Token", JSON.stringify(data.token));
 
-          fetch("https://66e567fb5cc7f9b6273d3b2b.mockapi.io/api/profiles", {
-            method: "POST",
-            headers: { "Content-type": "application/json" },
-            body: JSON.stringify({
-              name: nameInp.value,
-              email: emailInp.value,
-              password: password.value,
-              token: data.token
+            fetch("https://66e567fb5cc7f9b6273d3b2b.mockapi.io/api/profiles", {
+              method: "POST",
+              headers: { "Content-type": "application/json" },
+              body: JSON.stringify({
+                name: nameInp.value,
+                email: emailInp.value,
+                password: password.value,
+                token: data.token,
+              }),
             })
-          })
-            .then((res) => res.json())
-            .then((data) => {
-              console.log(data);
-              window.location.replace("./admin.html")
-            });
+              .then((res) => res.json())
+              .then((data) => {
+                console.log(data);
+                window.location.replace("./admin.html");
+              });
+          }
+          else{
+            Toastify({text: "login yoki parol xato terildi", backgroundColor: "red", position: "center"})
+          }
         });
     } else {
       window.location.replace("./admin.html");
